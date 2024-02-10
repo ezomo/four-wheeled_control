@@ -107,7 +107,7 @@ fn move_chassis(_theta:f64, _pawer:f64, _revolution:f64,publisher:&Publisher<MdL
 
     for i in 0..motor_power.len() {
 
-        motor_power[i] = MAX_PAWER_OUTPUT * (_pawer/MAX_PAWER_INPUT) + motor_power[i];
+        motor_power[i] = MAX_PAWER_OUTPUT * (_pawer/MAX_PAWER_INPUT)* (_theta.sin()/_theta.sin().abs())     + motor_power[i];
 
 
         motor_power[i] = motor_power[i].max(-MAX_PAWER_OUTPUT);
