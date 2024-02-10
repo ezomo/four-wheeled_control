@@ -1,5 +1,5 @@
 [package]
-name = "omni_control"
+name = "four-wheeled_control"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,10 +7,10 @@ edition = "2021"
 
 [dependencies]
 safe_drive = "0.2"
-drobo_interfaces = { path = "/tmp/2023_controller_a/drobo_interfaces" }
+drobo_interfaces = { path = "/tmp/webiot-2024/drobo_interfaces" }
 
 
 [package.metadata.ros]
 msg = ["drobo_interfaces"]
-msg_dir = "/tmp/2023_controller_a/"
+msg_dir = "/tmp/webiot-2024/"
 safe_drive_version = "0.2"
