@@ -101,15 +101,7 @@ fn move_chassis(_theta:f64, _pawer:f64, _revolution:f64,publisher:&Publisher<MdL
 
 
     
-    safe_drive::pr_info!(_logger,"fl : {} fr : {} br : {} bl : {} PA : {} ø : {} re :{}",
-    motor_power[CHASSIS.fr.id],
-    motor_power[CHASSIS.fl.id],
-    motor_power[CHASSIS.br.id],
-    motor_power[CHASSIS.bl.id],
-    _pawer,
-    _theta/PI*180.,
-    _revolution
-    );
+
 
     
 
@@ -123,6 +115,16 @@ fn move_chassis(_theta:f64, _pawer:f64, _revolution:f64,publisher:&Publisher<MdL
         
         send_pwm(i as u32,0,motor_power[i]>0., motor_power[i].abs() as u32,publisher);
     }
+
+    safe_drive::pr_info!(_logger,"fl : {} fr : {} br : {} bl : {} PA : {} ø : {} re :{}",
+    motor_power[CHASSIS.fr.id],
+    motor_power[CHASSIS.fl.id],
+    motor_power[CHASSIS.br.id],
+    motor_power[CHASSIS.bl.id],
+    _pawer,
+    _theta/PI*180.,
+    _revolution
+    );
 
 }
 
